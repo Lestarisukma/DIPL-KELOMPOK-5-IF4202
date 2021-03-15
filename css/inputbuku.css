@@ -1,0 +1,73 @@
+.navbar {
+    background-color: #659DD4;
+    
+}
+
+.navbar .navbar-brand {
+    color: #ecf0f1;
+}
+
+.navbar .navbar-brand:focus,
+.navbar .navbar-brand:hover {
+    color: #ecdbff;
+}
+#awal {
+    color:#FFFFFF;
+}
+
+.navbar .navbar-text {
+    color: #ecf0f1;
+}
+
+.navbar .navbar-text a {
+    color: #ecdbff;
+}
+
+.navbar .navbar-text a:focus,
+.navbar .navbar-text a:hover {
+    color: #ecdbff;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #ecf0f1;
+    border-radius: 0.25rem;
+    margin: 0 0.25em;
+}
+
+.navbar .navbar-nav .nav-link:not(.disabled):focus,
+.navbar .navbar-nav .nav-link:not(.disabled):hover {
+    color: #ecdbff;
+}
+
+.navbar .navbar-nav .nav-item.active .nav-link,
+.navbar .navbar-nav .nav-item.active .nav-link:focus,
+.navbar .navbar-nav .nav-item.active .nav-link:hover,
+.navbar .navbar-nav .nav-item.show .nav-link,
+.navbar .navbar-nav .nav-item.show .nav-link:focus,
+.navbar .navbar-nav .nav-item.show .nav-link:hover {
+    color: #ecdbff;
+    background-color: #7c75e7;
+}
+
+.navbar .navbar-toggle {
+    border-color: #7c75e7;
+}
+
+.navbar .navbar-toggle:focus,
+.navbar .navbar-toggle:hover {
+    background-color: #7c75e7;
+}
+
+.navbar .navbar-collapse,
+.navbar .navbar-form {
+    border-color: #ecf0f1;
+}
+
+.navbar .navbar-link {
+    color: #ecf0f1;
+}
+
+.navbar .navbar-link:hover {
+    color: #ecdbff;
+}
+
