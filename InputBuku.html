@@ -3,84 +3,13 @@
     <head>
         <!--BOOTSTRAP-->
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/inputbuku.css">
+       
        
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-        <style>
-            .navbar {
-                background-color: #659DD4;
-                
-            }
-
-            .navbar .navbar-brand {
-                color: #ecf0f1;
-            }
-
-            .navbar .navbar-brand:focus,
-            .navbar .navbar-brand:hover {
-                color: #ecdbff;
-            }
-            #awal {
-                color:#FFFFFF;
-            }
-
-            .navbar .navbar-text {
-                color: #ecf0f1;
-            }
-
-            .navbar .navbar-text a {
-                color: #ecdbff;
-            }
-
-            .navbar .navbar-text a:focus,
-            .navbar .navbar-text a:hover {
-                color: #ecdbff;
-            }
-
-            .navbar .navbar-nav .nav-link {
-                color: #ecf0f1;
-                border-radius: 0.25rem;
-                margin: 0 0.25em;
-            }
-
-            .navbar .navbar-nav .nav-link:not(.disabled):focus,
-            .navbar .navbar-nav .nav-link:not(.disabled):hover {
-                color: #ecdbff;
-            }
-
-            .navbar .navbar-nav .nav-item.active .nav-link,
-            .navbar .navbar-nav .nav-item.active .nav-link:focus,
-            .navbar .navbar-nav .nav-item.active .nav-link:hover,
-            .navbar .navbar-nav .nav-item.show .nav-link,
-            .navbar .navbar-nav .nav-item.show .nav-link:focus,
-            .navbar .navbar-nav .nav-item.show .nav-link:hover {
-                color: #ecdbff;
-                background-color: #7c75e7;
-            }
-
-            .navbar .navbar-toggle {
-                border-color: #7c75e7;
-            }
-
-            .navbar .navbar-toggle:focus,
-            .navbar .navbar-toggle:hover {
-                background-color: #7c75e7;
-            }
-            
-            .navbar .navbar-collapse,
-            .navbar .navbar-form {
-                border-color: #ecf0f1;
-            }
-
-            .navbar .navbar-link {
-                color: #ecf0f1;
-            }
-
-            .navbar .navbar-link:hover {
-                color: #ecdbff;
-            }
-
-        </style>
+        <title>Peminjaman Buku</title>
+        
     </head>
 <body>
      <div>
@@ -91,11 +20,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="">Home</a>
                     </li>
-                </ul>
-                <ul class="navbar-nav  mt-2 mt-lg-0">
+               
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Buku
+                           Buku
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="#">Action</a>
@@ -103,18 +31,15 @@
                           <div class="dropdown-divider"></div>
                           <a class="dropdown-item" href="#">Something else here</a>
                         </div>
-                      </li>
-                </ul>
-                <ul class="navbar-nav  mt-2 mt-lg-0">
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="">Ruangan</a>
                     </li>
-                </ul>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                </form>
+                    <form class="form-inline" width="100px">
+                        <input class="form-control mr-sm-10" type="search" placeholder="Search" aria-label="Search">
+                    </form>
                 
-                <ul class="navbar-nav  mt-2 mt-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="">Sign Up</a>
                     </li>
@@ -125,38 +50,8 @@
         
 
         <!--Form Input Peminjaman Buku -->
-        <div class="container-fluid ">
-            <div class="row ">
-                <div class="col-12 justify-content-center">
-                    <div style="padding-top: 100px;">
-                            <h1 style="text-align: center;">Input Peminjaman Buku</h1>
-                            <div style="margin: 0 auto ;">
-                                    <label  style="text-align: center;">
-                                        Kode Buku
-                                    </label>
-                                    <br/>
-                                    <input type="text" required name="name"  style="text-align: center;"/>
-                                    <br/>
-                                    <label style="text-align: center;" >
-                                       Judul
-                                    </label>
-                                    <br/>
-                                    <input type= "text" required name= "harga" style="text-align: center;"/>
-                                    <br/>
-                                    <label  style="text-align: center;" >
-                                        Tanggal Pengambilan 
-                                    </label>
-                                    <br/>
-                                    <input  type= "number" required name= "berat"  style="text-align: center;"/>
-                                    <br/>
-                                    <div style="width: 100%; padding-Bottom: 20px">
-                                        <button >submit</button>
-                                    </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
+     
             
 
     </body>

@@ -1,0 +1,57 @@
+.navbar-brand {
+	color: white;
+	font-weight: bold;
+}
+.main-header{
+	background-image: url(../asset/moon.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 10% 0;
+}
+.container-fluid{
+	overflow: hidden;
+}
+
+.ava-gambar .rounded-circle{
+	margin-bottom: 2%;
+	width:10px;
+}
+
+.main-about{
+	background-color: #000000;
+	padding: 10% 0;
+	color :#F0F0F0F0;
+}
+
+.main-porto{
+	background-color:#141e26;
+
+}
+
+.main-skill h4{
+	color: #000000;
+}
+
+.main-skill{
+	background-color: #F0F0F0;
+} 
+
+h4, h6{
+	color:#F0F0F0F0;
+}
+
+.progress{
+	border: 1px solid;
+	margin: 1% 0;
+}
+
+.main-contact{
+	margin-top:100px;
+	margin-bottom: 100px;
+
+}
+
+.main-footer{
+	margin-bottom: 20px;
+	background-color: #F0F0F0;
+}
