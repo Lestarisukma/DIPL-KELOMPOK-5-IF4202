@@ -1,0 +1,51 @@
+body {
+    background-color: #CBE3FF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.satu {
+    margin-top: 100px;
+    margin-left: 550px;
+}
+
+.dua {
+    margin-left: 640px;
+}
+
+input {
+    background-color: #DFDFDF;
+    border-radius: 5px;
+    height: 25px;
+    width: 250px;
+    margin-bottom: 15px;
+}
+
+form {
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+.id {
+    margin-left: 40px;
+}
+
+.nama {
+    margin-left: 18px;
+}
+
+.judul {
+    margin-left: 70px;
+}
+
+.tanggal {
+    margin-left: 90px;
+}
+
+button {
+    background-color: #3F3D56;
+    border-radius: 8px;
+    color: white;
+    margin-top: 20px;
+    width: 80px;
+    height: 30px;
+}
