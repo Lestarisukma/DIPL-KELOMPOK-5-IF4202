@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2021 at 03:22 AM
+-- Generation Time: Apr 29, 2021 at 05:27 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -55,7 +55,7 @@ CREATE TABLE `denda` (
 
 CREATE TABLE `mahasiswa` (
   `NIM` int(15) NOT NULL,
-  `NamaMhs` varchar(40) NOT NULL,
+  `Nama` varchar(40) NOT NULL,
   `Email` varchar(30) NOT NULL,
   `Password` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -64,7 +64,7 @@ CREATE TABLE `mahasiswa` (
 -- Dumping data for table `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`NIM`, `NamaMhs`, `Email`, `Password`) VALUES
+INSERT INTO `mahasiswa` (`NIM`, `Nama`, `Email`, `Password`) VALUES
 (1301184141, 'Aawan Arwan', 'awanarwan@gmail.com', '123456');
 
 -- --------------------------------------------------------
