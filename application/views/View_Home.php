@@ -3,12 +3,31 @@
 <head>
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/home.css">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    
+    <!--CSS-->
+    <style>
+      #carouselExampleIndicators{
+          padding-top:70px;
+          margin-bottom: 10px
+      }
+      .card-pop{
+          border-radius: 10px;
+          background: #fff;
+          box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+          transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+          cursor: pointer;
+      }
+      .card-pop:hover{
+          transform: scale(1.05);
+          box-shadow:  0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+      }
+
+    </style>
 </head>
 <body>
     <div class="container" id="section1">
@@ -64,30 +83,6 @@
                     <img src="../../asset/nanti_kita_cerita_tentang_hari_ini_kredit_thumb.jpg" width="210" height="210" class="card-img-top" alt="..." title="Japanese">
                   </div>
               </div>
-              <div class="col-2">
-                  <div class="card-pop">
-                    <img src="../../asset/sebuah.png" class="card-img-top" alt="..." width="210" height="210" title="Japanese">
-                  </div>
-              </div>
-              <div class="col-2">
-                  <div class="card-pop">
-                    <img src="../../asset/konspirasi.jpg" class="card-img-top" alt="..." width="210" height="210" title="Japanese">
-                  </div>
-              </div>
-              <div class="col-2">
-                  <div class="card-pop">
-                    <img src="../../asset/geez&ann.jpg" class="card-img-top" alt="..." width="210" height="210">
-                  </div>
-              </div>
-              <div class="col-2">
-                  <div class="card-pop">
-                    <img src="../../asset/the_things.jpg" class="card-img-top " alt="..." width="210" height="210" title="Japanese">
-                  </div>
-              </div>
-              <div class="col-2">
-                <div class="card-pop">
-                  <img src="../../asset/the_things.jpg" class="card-img-top " alt="..." width="210" height="210" title="Japanese">
-                </div>
             </div>
         </div>  
     </div>
