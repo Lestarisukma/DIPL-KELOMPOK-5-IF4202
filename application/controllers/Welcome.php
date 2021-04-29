@@ -19,7 +19,41 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
-		$this->load->view('welcome_message');
-	}
+		{
+			session_destroy();
+			$data['main_view'] = 'View_Login';
+			$data['title'] = 'Login';
+			$this->load->view('View_Home', $data);
+		}
+
+		public function login()
+		{
+			$this->form_validation->set_rules('Email', 'email', 'required');
+			$this->form_validation->set_rules('Password', 'password', 'required');
+
+			$data['main_view'] = 'View_Login';
+			$data['title'] = 'Login';
+
+			if ($this->form_validation->run() == FALSE) {
+				$this->load->view('View_Home', $data);
+			} else {
+				$email = $this->input->post('Email');
+				$password = $this->input->post('Password');
+	
+				$peran;
+				$query = $this->db->get_where('mahasiswa', ['Email' => $email])->row_array();
+
+				//Jika username terdeteksi di table mahasiswa
+				if ($query) {
+					$peran = 'mahasiswa';
+				} else {
+					$query = $this->db->get_where('pustakawan', ['Email' => $email])->row_array();
+
+					//Jika username terdeteksi di table pustakawan
+					if ($query) {
+						$peran = 'pustakawan';
+					} 
+				}
+		}
+
 }
