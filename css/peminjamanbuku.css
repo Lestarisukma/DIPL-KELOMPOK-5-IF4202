@@ -1,0 +1,35 @@
+body {
+    background-color: #CBE3FF;
+    margin-left: 500px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+    background-color: #F0D790;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+textarea {
+    background-color: #F0D790;
+    width: 300px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #3F3D56;
+    border-radius: 8px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 256px;
+    width: 50px;
+    height: 30px;
+}
+
+
+.kerangka {
+    margin-left: 50px;
+}
