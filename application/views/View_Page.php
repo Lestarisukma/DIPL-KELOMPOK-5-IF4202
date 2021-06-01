@@ -17,8 +17,10 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
     <!-- <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.js"></script> -->
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"> </script>
+    <link href="<?= base_url('css/login.css')?>" rel="stylesheet">
 </head>
 <body>
     <?php $this->view($main_view); ?>
+
 </body>
 </html>

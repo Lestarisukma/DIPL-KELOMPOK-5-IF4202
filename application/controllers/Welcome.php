@@ -23,7 +23,14 @@ class Welcome extends CI_Controller {
 			session_destroy();
 			$data['main_view'] = 'View_Login';
 			$data['title'] = 'Login';
-			$this->load->view('View_Home', $data);
+			$this->load->view('View_Page', $data);
+		}
+
+		public function vmahasiswa()
+		{
+			$data['main_view'] = 'View_Home';
+			$data['title'] = 'Home';
+			$this->load->view('View_Page', $data);
 		}
 
 		public function login()
@@ -54,6 +61,44 @@ class Welcome extends CI_Controller {
 						$peran = 'pustakawan';
 					} 
 				}
-		}
+			}
+			//Jika username valid di mahasiswa
+			if ($peran == 'mahasiswa') {
 
+				if ($password == $query['Password']) {
+					$data = [
+						'NIM' => $query['NIM'],
+						'NamaMhs' => $query['NamaMhs'],
+						'peran' => $peran
+					];
+					
+					$this->session->set_userdata($data);
+                	$data['main_view'] = 'View_Home';
+                	$data['title'] = 'Mahasiswa';
+					$this->load->view('View_Home', $data);
+
+				} else {
+					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
+					redirect('Welcome/View_Login');
+				}
+			}
+			else if ($peran == 'pustakawan') {
+				if ($password == $query['Password']) {
+					$data = [
+						'NIP' => $query['NIP'],
+						'Nama' => $query['Nama'],
+						'peran' => $peran
+					];
+					
+					$this->session->set_userdata($data);
+                	$data['main_view'] = 'View_Home';
+                	$data['title'] = 'Pustakawan';
+					$this->load->view('View_Home', $data);
+
+				} else {
+					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
+					redirect('Welcome/View_Login');
+				}
+	}
+}
 }
