@@ -28,6 +28,7 @@
     <title>Home</title>
 </head>
 <body>
+<?php $this->load->view('template/navbar');?>
     <div class="container" id="section1">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div>

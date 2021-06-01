@@ -42,26 +42,29 @@ class Welcome extends CI_Controller {
 			$data['title'] = 'Login';
 
 			if ($this->form_validation->run() == FALSE) {
-				$this->load->view('View_Home', $data);
-			} else {
-				$email = $this->input->post('Email');
-				$password = $this->input->post('Password');
-	
-				$peran;
-				$query = $this->db->get_where('mahasiswa', ['Email' => $email])->row_array();
+				$this->load->view('View_Page', $data);
+				return;
+			} 
+			
+			$email = $this->input->post('Email');
+			$password = $this->input->post('Password');
 
-				//Jika username terdeteksi di table mahasiswa
-				if ($query) {
-					$peran = 'mahasiswa';
-				} else {
-					$query = $this->db->get_where('pustakawan', ['Email' => $email])->row_array();
+			$peran;
+			$query = $this->db->get_where('mahasiswa', ['Email' => $email])->row_array();
 
-					//Jika username terdeteksi di table pustakawan
-					if ($query) {
-						$peran = 'pustakawan';
-					} 
-				}
+			//Jika email terdeteksi di table mahasiswa
+			if ($query != null) {
+				$peran = 'mahasiswa';
+			} 
+			else {
+				$query = $this->db->get_where('pustakawan', ['Email' => $email])->row_array();
+
+				//Jika username terdeteksi di table pustakawan
+				if ($query != null) {
+					$peran = 'pustakawan';
+				} 
 			}
+			
 			//Jika username valid di mahasiswa
 			if ($peran == 'mahasiswa') {
 
@@ -99,6 +102,6 @@ class Welcome extends CI_Controller {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
 					redirect('Welcome/View_Login');
 				}
+			}
 	}
-}
 }
