@@ -51,7 +51,7 @@
     <div class="border">
         <h1>Input Pengembalian Buku</h1>
         <div class="kerangka">
-            <textarea placeholder="KODE PEMINJAMAN"></textarea><br>
+            <textarea placeholder="KODE PEMINJAMAN"> </textarea><br>
             <button>OK</button>
         </div>
     </div>
