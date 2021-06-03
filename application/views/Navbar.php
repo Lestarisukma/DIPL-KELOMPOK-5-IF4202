@@ -30,7 +30,7 @@
             </div>
             </li>
             <li class="nav-item" >
-            <a class="nav-link" href="#">Ruangan <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="<?= site_url('Controller_Ruangan')?>">Ruangan <span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

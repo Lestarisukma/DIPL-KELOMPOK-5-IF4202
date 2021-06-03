@@ -34,7 +34,7 @@
               <div class="col-4 mb-5">
                 <a href=" ">
                   <div class="card" style="width: 18rem; ">
-                    <img class="card-img-top" src="../../asset/ruangan1.jpg" alt="Card image cap" width="400" height="200">
+                    <img class="card-img-top" src="../asset/ruangan1.jpg" alt="Card image cap" width="400" height="200">
                     <div class="card-body">
                       <p class="card-text" style="color: black;">R01</p>
                     </div>
@@ -44,7 +44,7 @@
               <div class="col-4 mb-5">
                 <a href=" ">
                   <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../asset/ruangan2.jpg" alt="Card image cap" width="400" height="200" >
+                    <img class="card-img-top" src="../asset/ruangan2.jpg" alt="Card image cap" width="400" height="200" >
                     <div class="card-body">
                       <p class="card-text " style="color: black;">R02</p>
                     </div>
@@ -54,7 +54,7 @@
               <div class="col-4 mb-5">
                 <a href=" ">
                   <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../asset/ruangan3.JPEG" alt="Card image cap" width="400" height="200">
+                    <img class="card-img-top" src="../asset/ruangan3.JPEG" alt="Card image cap" width="400" height="200">
                     <div class="card-body">
                       <p class="card-text" style="color: black;">R03</p>
                     </div>
@@ -64,7 +64,7 @@
               <div class="col-4 mb-5">
                 <a href=" ">
                   <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../asset/ruangan4.JPEG" alt="Card image cap" width="200" height="200">
+                    <img class="card-img-top" src="../asset/ruangan4.JPEG" alt="Card image cap" width="200" height="200">
                     <div class="card-body">
                       <p class="card-text" style="color: black;">R04</p>
                     </div>
@@ -74,7 +74,7 @@
               <div class="col-4 mb-5">
                 <a href=" ">
                   <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../asset/ruangan5.jpeg" alt="Card image cap" width="400" height="200">
+                    <img class="card-img-top" src="../asset/ruangan5.jpeg" alt="Card image cap" width="400" height="200">
                     <div class="card-body">
                       <p class="card-text" style="color: black;">R05</p>
                     </div>
@@ -84,7 +84,7 @@
               <div class="col-4 mb-5">
                 <a href=" ">
                   <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../../asset/ruangan6.jpg" alt="Card image cap" width="400" height="200">
+                    <img class="card-img-top" src="../asset/ruangan6.jpg" alt="Card image cap" width="400" height="200">
                     <div class="card-body">
                       <p class="card-text" style="color: black;">R06</p>
                     </div>

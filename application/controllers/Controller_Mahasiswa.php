@@ -6,12 +6,12 @@ class Controller_Mahasiswa extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->model('Model_Mahasiswa');
+		$this->load->model('Model_Mahasiswa');
 	}
 	public function index()
 	{
-		$content['main_view'] => 'View_Home';
-		$content['title'] => 'Mahasiswa';
+		$content['main_view'] = 'View_Home';
+		$content['title'] = 'Mahasiswa';
 
 		$this->load->view('View_Home', $content);
 	}
@@ -64,7 +64,7 @@ class Controller_Mahasiswa extends CI_Controller {
 		];
 
 		$kesuksesan['sukses'] = true;
-		$this->->updateMahasiswa($NIM, $data);
+		$this->updateMahasiswa($NIM, $data);
 
 		echo json_encode($kesuksesan);
 
