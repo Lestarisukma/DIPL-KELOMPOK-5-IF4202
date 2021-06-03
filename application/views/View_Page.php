@@ -20,7 +20,11 @@
     <link href="<?= base_url('css/login.css')?>" rel="stylesheet">
 </head>
 <body>
+    <?php 
+    if($main_view != 'View_Login'){
+        $this->load->view('template/navbar');   
+    }
+    ?>
     <?php $this->view($main_view); ?>
-
 </body>
 </html>
