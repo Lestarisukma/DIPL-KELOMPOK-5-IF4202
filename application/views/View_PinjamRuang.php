@@ -28,7 +28,7 @@
     <!--View card untuk menampilkan jenis-jenis ruangan-->
     <div class="container-fluid" style="padding-left: 70px;">
         <div class="row ">
-          <h1 style="padding-top: 100px; margin: 0 auto; margin-bottom: 50px;">DAFTAR RUANGAN </h1>
+          <h1 style="padding-top: 70px; margin: 0 auto; margin-bottom: 50px;">DAFTAR RUANGAN </h1>
           <div class="container">
             <div class="row">
               <div class="col-4 mb-5">
