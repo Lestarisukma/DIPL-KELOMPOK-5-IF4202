@@ -4,7 +4,7 @@
             <h1>Input Pengembalian Buku</h1>
             <div class="kerangka" style="margin-left: 50px;">
                 <textarea placeholder="KODE PEMINJAMAN" style="background-color: #F0D790; width: 300px; border-radius: 5px; margin-left: 25px; margin-top: 20px;"> </textarea><br>
-                <button style="background-color: #3F3D56; border-radius: 8px; color: white; margin-top: 20px; margin-left: 150px; width: 50px; height: 30px;">OK</button>
+                <button style="background-color: #3F3D56; border-radius: 8px; color: white; margin-top: 20px; margin-left: 275px; width: 50px; height: 30px;">OK</button>
             </div>
         </div>
     </div>
