@@ -12,7 +12,7 @@ class Controller_Kelola extends CI_Controller {
 	public function index()
 	{
 		$content['main_view'] = 'View_Pengelolaan';
-		$content['title'] = 'Pustakawan|Pengelolaan';
+		$content['title'] = 'Pustakawan | Pengelolaan';
 
 		$this->load->view('View_Page', $content);
 	}

@@ -8,10 +8,11 @@ class Controller_InputDenda extends CI_Controller {
 		parent::__construct();
 		$this->model('Model_InputDenda');
 	}
+
 	public function index()
 	{
 		$content['main_view'] => 'View_InputDenda';
-		$content['title'] => 'Input Denda';
+		$content['title'] => 'Pustakawan | Input Denda';
 
 		$this->load->view('View_Home', $content);
 	}
@@ -62,7 +63,7 @@ class Controller_InputDenda extends CI_Controller {
 		];
 
 		$kesuksesan['sukses'] = true;
-		$this->->updateDenda($idDenda, $data);
+		$this->updateDenda($idDenda, $data);
 
 		echo json_encode($kesuksesan);
 
