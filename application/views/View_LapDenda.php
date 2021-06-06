@@ -1,7 +1,6 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--BOOTSTRAP-->
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
 
     <meta charset="UTF-8">
@@ -9,7 +8,7 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Denda</title>
 </head>
-<body>
+<body> -->
     <!--View tabel untuk melihat data denda pada mahasiswa-->
     <div class="container-fluid mt-lg-5  mb-5"
     style="background-color: #CBE3FF; width: 100%; text-align: center; padding-top: 10px; padding-bottom: 10px;">
@@ -119,5 +118,5 @@
             </tbody>
           </table>
     </div>
-</body>
-</html>
+<!-- </body>
+</html> -->

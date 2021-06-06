@@ -76,6 +76,7 @@ class Welcome extends CI_Controller {
 				];
 				
 				$this->session->set_userdata('nama', $query['NamaMhs']);
+				$this->session->set_userdata('peran', $peran);
 				$data['main_view'] = 'View_Home';
 				$data['title'] = 'Mahasiswa';
 				$this->load->view('View_Page', $data);
@@ -93,10 +94,11 @@ class Welcome extends CI_Controller {
 					'peran' => $peran
 				];
 				
-				$this->session->set_userdata($data);
+				$this->session->set_userdata('nama',$query['Nama']);
+				$this->session->set_userdata('peran', $peran);
 				$data['main_view'] = 'View_Home';
 				$data['title'] = 'Pustakawan';
-				$this->load->view('View_Home', $data);
+				$this->load->view('View_Page', $data);
 
 			} else {
 				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
