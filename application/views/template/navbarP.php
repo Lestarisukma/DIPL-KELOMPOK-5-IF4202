@@ -11,26 +11,15 @@
             </li>
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?= $this->session->userdata('peran') == 'mahasiswa'?'Buku':'Laporan'?>
+                    Laporan
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <?php if($this->session->userdata('peran') == 'mahasiswa'){?>
-                    <a class="dropdown-item" href="<?= site_url('Controller_Buku/Peminjaman')?>">Peminjaman</a>
-                    <a class="dropdown-item" href="<?= site_url('Controller_Buku/Pengembalian')?>">Pengembalian</a>
-                    <a class="dropdown-item" href="<?= site_url('Controller_Buku/Denda')?>">Denda</a>
-                    <?php } else{?>
                     <a class="dropdown-item" href="<?= site_url('Controller_Buku/Peminjaman')?>">Buku</a>
-                    <a class="dropdown-item" href="<?= site_url('Controller_Laporan/DendaMahasiswa')?>">Denda</a>
-                    <?php } ?>
-                    
+                    <a class="dropdown-item" href="<?= site_url('Controller_Buku/Denda')?>">Denda</a>
                 </div>
             </li>
             <li class="nav-item" >
-                <?php if($this->session->userdata('peran') == 'mahasiswa'){?>
-                <a class="nav-link" href="<?= site_url('Controller_Ruangan')?>">Ruangan <span class="sr-only">(current)</span></a>
-                <?php } else{?>
-                <a class="nav-link" href="<?= site_url('Controller_Kelola')?>">Kelola <span class="sr-only">(current)</span></a>
-                <?php } ?>
+                <a class="nav-link" href="<?= site_url('Controller_Ruangan')?>">Kelola <span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
