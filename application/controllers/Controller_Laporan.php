@@ -20,7 +20,7 @@ class Controller_Laporan extends CI_Controller {
 	public function DendaMahasiswa()
 	{
 		$content['main_view'] = 'View_LapDenda';
-		$content['title'] = 'Pustakawan';
+		$content['title'] = 'Pustakawan | Denda Mahasiswa';
 
 		$this->load->view('View_Page', $content);
 	}
@@ -28,7 +28,7 @@ class Controller_Laporan extends CI_Controller {
 	public function InputBukuBaru()
 	{
 		$content['main_view'] = 'View_InputDataBuku';
-		$content['title'] = 'Pustakawan';
+		$content['title'] = 'Pustakawan | Input Buku';
 
 		$this->load->view('View_Page', $content);
 	}

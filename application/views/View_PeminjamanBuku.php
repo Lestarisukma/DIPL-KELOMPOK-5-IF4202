@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,19 +8,18 @@
     <style>
         body {
             background-color: #CBE3FF;
-            margin-left: 500px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        input {
+        /* .border {
             background-color: #F0D790;
             width: 300px;
             height: 30px;
             border-radius: 5px;
             margin-top: 20px;
-        }
+        } */
 
-        textarea {
+        .textarea {
             background-color: #F0D790;
             width: 300px;
             border-radius: 5px;
@@ -39,21 +37,22 @@
         }
         
         .kerangka {
-            margin-left: 50px;
+            margin-left: 550px;
+            margin-top: 35px;
         }
     </style>
     <title>Peminjaman Buku</title>
 </head>
 <body>
-    <div class="border">
-        <h1>Input Peminjaman Buku</h1>
+    <div>
+        <h1 style="margin-left: 500px; margin-top: 50px;">Input Peminjaman Buku</h1>
         <div class="kerangka">
             <a>KODE BUKU</a><br>
-            <input type="text"/><br>
+            <input type="text" class="textarea"/><br>
             <a>JUDUL BUKU</a><br>
-            <input type="text"/><br>
+            <input type="text" class="textarea"/><br>
             <a>TANGGAL PENGAMBILAN</a><br>
-            <input type="date"/><br>
+            <input type="date" class="textarea"/><br>
             <button>OK</button>
         </div>
     </div>

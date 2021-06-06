@@ -1,5 +1,4 @@
 <div style="background-color: #FF4F5A">
-  <h1 style="text-align: center; background-color: #FF4F5A; padding-bottom: '50px'; margin-bottom: '100px'; color: #1A2E35">Langkah Menghindari Covid-19</h1>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background-color: #FF4F5A">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
