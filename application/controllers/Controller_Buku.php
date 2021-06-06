@@ -12,7 +12,7 @@ class Controller_Buku extends CI_Controller {
 	public function Peminjaman()
 	{
 		$content['main_view'] = 'View_PeminjamanBuku';
-		$content['title'] = 'Mahasiswa';
+		$content['title'] = 'Mahasiswa | Peminjaman';
 
 		$this->load->view('View_Page', $content);
 	}
@@ -20,7 +20,7 @@ class Controller_Buku extends CI_Controller {
 	public function Pengembalian()
 	{
 		$content['main_view'] = 'View_PengembalianBuku';
-		$content['title'] = 'Mahasiswa';
+		$content['title'] = 'Mahasiswa | Pengembalian';
 
 		$this->load->view('View_Page', $content);
 	}
@@ -28,7 +28,7 @@ class Controller_Buku extends CI_Controller {
 	public function Denda()
 	{
 		$content['main_view'] = 'View_PemberitahuanDenda';
-		$content['title'] = 'Mahasiswa';
+		$content['title'] = 'Mahasiswa | Denda';
 
 		$this->load->view('View_Page', $content);
 	}
