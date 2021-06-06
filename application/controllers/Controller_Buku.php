@@ -32,4 +32,25 @@ class Controller_Buku extends CI_Controller {
 
 		$this->load->view('View_Page', $content);
 	}
+
+	public function updateBuku($KodeBuku)
+	{
+		foreach ($_POST as $key => $value) {
+			$post[$key] = $value;
+		}
+
+		$data = [
+
+			"Judul" => $post['JudulB'],
+			"Penerbit" => $post['PenerbitB'],
+			"Stock" => $post['StockB']
+
+		];
+
+		$kesuksesan['sukses'] = true;
+		$this->updateBuku($KodeBuku, $data);
+
+		echo json_encode($kesuksesan);
+
+	}
 }
