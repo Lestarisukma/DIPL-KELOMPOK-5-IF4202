@@ -68,5 +68,17 @@ class Controller_InputDenda extends CI_Controller {
 		echo json_encode($kesuksesan);
 
 	}
+	private function hitungDenda($denda,$hariterlambat)
+    {
+        if ($hariterlambat < 5){
+            return $denda * $hariterlambat;
+        }
+        else if (($hariterlambat >= 5) && ($hariterlambat < 10)){
+            return $denda * $hariterlambat *1.5;
+        }
+        else if ($hariterlambat >= 10) {
+            return $denda * $hariterlambat *2;
+        }
+    }
 
 }
