@@ -33,4 +33,12 @@ class Controller_Laporan extends CI_Controller {
 		$this->load->view('View_Page', $content);
 	}
 
+	public function PengembalianBuku()
+	{
+		$content['main_view'] = 'View_PengembalianBuku';
+		$content['title'] = 'Pustakawan | Pengembalian Buku';
+
+		$this->load->view('View_Page', $content);
+	}
+
 }

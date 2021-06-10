@@ -29,3 +29,4 @@ class Model_Buku extends CI_Model {
 	}
 	
 }
+?>
