@@ -25,6 +25,13 @@
         $this->load->view('template/navbar');   
     }
     ?>
-    <?php $this->view($main_view); ?>
+    <?php if(isset($data)){
+        $this->view($main_view, $data);
+    }
+    else{
+        $this->view($main_view);
+    } 
+    ?>
+
 </body>
 </html>
