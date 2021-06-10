@@ -9,6 +9,13 @@ class Controller_Kelola extends CI_Controller {
 		$this->load->model('Model_Buku');
 	}
 
+	public function getBukuByKodeBuku($KodeBuku)
+	{
+		$data = $this->Model_Buku->getBukuByKodeBuku($KodeBuku);
+
+		echo json_encode($data);
+	}
+
 	public function index()
 	{
 		$content['main_view'] = 'View_Pengelolaan';
@@ -30,24 +37,31 @@ class Controller_Kelola extends CI_Controller {
 		
 		if(!$this->upload->do_upload('uploadImage')){
 			$error = array('error' => $this->upload->display_errors());
-				redirect('/');
+			var_dump($error);
+				redirect('/Controller_Kelola');
 		} 
 
 		else {
-			$data = [
-				'Gambar' => $this->upload->data()['file_name'],
-				'Judul' => $this->input->post('Judul'),
-				'KodeBuku' => $this->input->post('KodeBuku'),
-				'Penerbit' => $this->input->post('Penerbit'),
-				'Stock' => $this->input->post('Stock')
-			];
+			$cekkode = $this->Model_Buku->getBukuByKodeBuku($this->input->post('KodeBuku'));
+			if (count($cekkode) <= 0){
+				$data = [
+					'Gambar' => $this->upload->data()['file_name'],
+					'Judul' => $this->input->post('Judul'),
+					'KodeBuku' => $this->input->post('KodeBuku'),
+					'Penerbit' => $this->input->post('Penerbit'),
+					'Stock' => $this->input->post('Stock')
+				];
 
-			$insert = $this->Model_Buku->tambahDataBuku($data);
-			if(!$insert) {
-				$error = array('error' => $this->upload->display_errors());
-				redirect('/Controller_Kelola');
+				$insert = $this->Model_Buku->tambahDataBuku($data);
+				if(!$insert) {
+					$error = array('error' => $this->upload->display_errors());
+					redirect('/Controller_Kelola');
+				}
+
+				else {
+					redirect('/Controller_Kelola');
+				}
 			}
-
 			else {
 				redirect('/Controller_Kelola');
 			}

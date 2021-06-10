@@ -17,6 +17,12 @@ class Model_Buku extends CI_Model {
 		return $this->db->get('buku')->row();
 	}
 
+	public function getBukuByKodeBuku2($KodeBuku)
+	{
+		$this->db->where('KodeBuku', $KodeBuku);
+		return $this->db->get('buku')->result_array();
+	}
+
 	public function updateBuku($KodeBuku, $data)
 	{
 		$this->db->where('KodeBuku', $KodeBuku);
