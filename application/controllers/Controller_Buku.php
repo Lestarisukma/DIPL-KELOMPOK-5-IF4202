@@ -6,7 +6,7 @@ class Controller_Buku extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		// $this->load->model('Model_Mahasiswa');
+		$this->load->model('Model_Buku');
 	}
 
 	public function Peminjaman()
@@ -35,22 +35,25 @@ class Controller_Buku extends CI_Controller {
 
 	public function updateBuku($KodeBuku)
 	{
-		foreach ($_POST as $key => $value) {
-			$post[$key] = $value;
+
+		$cekkode = $this->Model_Buku->getBukuByKodeBuku($KodeBuku);
+		if (count($cekkode) <= 0){
+			$data = [
+
+			"Judul" => $this->input->post('JudulB'),
+			"Penerbit" => $this->input->post('PenerbitB'),
+			"Stock" => $this->input->post('StockB')
+
+			];
+
+			$this->Model_Buku->updateBuku($KodeBuku, $data);
+			redirect('/Controller_Kelola');
+
 		}
 
-		$data = [
-
-			"Judul" => $post['JudulB'],
-			"Penerbit" => $post['PenerbitB'],
-			"Stock" => $post['StockB']
-
-		];
-
-		$kesuksesan['sukses'] = true;
-		$this->updateBuku($KodeBuku, $data);
-
-		echo json_encode($kesuksesan);
-
+		else{
+			redirect('/Controller_Kelola');
+		}
+	
 	}
 }
