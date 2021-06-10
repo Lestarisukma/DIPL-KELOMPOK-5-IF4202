@@ -19,7 +19,7 @@
                     <a class="dropdown-item" href="<?= site_url('Controller_Buku/Pengembalian')?>">Pengembalian</a>
                     <a class="dropdown-item" href="<?= site_url('Controller_Buku/Denda')?>">Denda</a>
                     <?php } else{?>
-                    <a class="dropdown-item" href="<?= site_url('Controller_Buku/Peminjaman')?>">Buku</a>
+                    <a class="dropdown-item" href="<?= site_url('Controller_Laporan/PengembalianBuku')?>">Buku</a>
                     <a class="dropdown-item" href="<?= site_url('Controller_Laporan/DendaMahasiswa')?>">Denda</a>
                     <?php } ?>
                     
