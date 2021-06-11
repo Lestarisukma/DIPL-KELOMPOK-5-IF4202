@@ -88,7 +88,7 @@ style="background-color: #CBE3FF; width: 100%; text-align: center; padding-top: 
               <input type="text" class="form-control" id="StockBuku" name="Stock" placeholder="Stock Buku">
             </div>
             <div class="form-group">
-              <label for="UploadGambar">Upload Gamber</label>
+              <label for="UploadGambar">Upload Gambar</label>
               <input type="file" class="form-control-file" id="UploadGambar" name="uploadImage">
             </div>
             <div class="text-center">

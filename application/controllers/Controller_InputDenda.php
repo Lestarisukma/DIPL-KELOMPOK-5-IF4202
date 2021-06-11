@@ -81,4 +81,30 @@ class Controller_InputDenda extends CI_Controller {
         }
     }
 
+	public function InsetDenda() {
+		
+		$cekkode = $this->Model_Denda->getBukuByKodeBuku($this->input->post('KodeBuku'));
+		if (count($cekkode) <= 0){
+			$data = [
+				'idPeminjaman' => $this->input->post('idPeminjaman'),
+				'NamaMhs' => $this->input->post('NamaMhs'),
+				'Judul' => $this->input->post('Judul'),
+				'Tanggal' => $this->input->post('Tanggal'),
+				'TotalDenda' => $this->input->post('TotalDenda')
+			];
+
+			$insert = $this->Model_InputDenda->tambahDataDenda($data);
+			if(!$insert) {
+				$error = array('error' => $this->upload->display_errors());
+				redirect('/Controller_InputDenda');
+			}
+
+			else {
+				redirect('/Controller_InputDenda');
+			}
+		}
+		else {
+			redirect('/Controller_InutDenda');
+		}
+	}		
 }

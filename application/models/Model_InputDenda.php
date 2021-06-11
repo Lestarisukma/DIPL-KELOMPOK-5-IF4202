@@ -27,5 +27,9 @@ class Model_InputDenda extends CI_Model {
 		$this->db->where('idDenda', $idDenda);
 		return $this->db->delete('denda');
 	}
+
+	public function dbDenda($idPeminjaman, ){
+
+	}
 	
 }

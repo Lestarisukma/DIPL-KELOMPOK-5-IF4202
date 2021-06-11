@@ -50,60 +50,56 @@ class Welcome extends CI_Controller {
 		$password = $this->input->post('Password');
 
 		$peran = ' ';
-		$query = $this->db->get_where('mahasiswa', ['Email' => $email])->row_array();
+		$query = $this->db->get_where('pengguna', ['Email' => $email])->row();
 
-		//Jika email terdeteksi di table mahasiswa
-		if ($query != null) {
-			$peran = 'mahasiswa';
-		} 
-		else {
-			$query = $this->db->get_where('pustakawan', ['Email' => $email])->row_array();
-
-			//Jika username terdeteksi di table pustakawan
-			if ($query != null) {
+		//Jika email terdeteksi di table
+		if (isset($query)) {
+			// var_dump($query);
+			$mhs = $this->db->get_where('mahasiswa', ['idPengguna' => $query->idPengguna])->row();
+			if(isset($mhs)){
+				$peran = 'mahasiswa';
+				if ($password == $query->Password) {
+					$data = [
+						'NIM' => $mhs->NIM,
+						'NamaMhs' => $mhs->NamaMhs,
+						'peran' => $peran
+					];
+					
+					$this->session->set_userdata('nama', $mhs->NamaMhs);
+					$this->session->set_userdata('peran', $peran);
+					$data['main_view'] = 'View_Home';
+					$data['title'] = 'Mahasiswa';
+					$this->load->view('View_Page', $data);
+	
+				} else {
+					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
+					redirect('Welcome/View_Login');
+				}
+			}
+			else{
 				$peran = 'pustakawan';
-			} 
-		}
-		
-		//Jika username valid di mahasiswa
-		if ($peran == 'mahasiswa') {
-
-			if ($password == $query['Password']) {
-				$data = [
-					'NIM' => $query['NIM'],
-					'NamaMhs' => $query['NamaMhs'],
-					'peran' => $peran
-				];
-				
-				$this->session->set_userdata('nama', $query['NamaMhs']);
-				$this->session->set_userdata('peran', $peran);
-				$data['main_view'] = 'View_Home';
-				$data['title'] = 'Mahasiswa';
-				$this->load->view('View_Page', $data);
-
-			} else {
-				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
-				redirect('Welcome/View_Login');
+				$pstkwn = $this->db->get_where('pustakawan', ['idPengguna' => $query->idPengguna])->row();
+				if ($password == $query->Password) {
+					$data = [
+						'NIP' => $pstkwn->NIP,
+						'Nama' => $pstkwn->Nama,
+						'peran' => $peran
+					];
+					
+					$this->session->set_userdata('nama',$pstkwn->Nama);
+					$this->session->set_userdata('peran', $peran);
+					$data['main_view'] = 'View_Home';
+					$data['title'] = 'Pustakawan';
+					$this->load->view('View_Page', $data);
+	
+				} else {
+					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
+					redirect('Welcome/View_Login');
+				}
 			}
-		}
-		else if ($peran == 'pustakawan') {
-			if ($password == $query['Password']) {
-				$data = [
-					'NIP' => $query['NIP'],
-					'Nama' => $query['Nama'],
-					'peran' => $peran
-				];
-				
-				$this->session->set_userdata('nama',$query['Nama']);
-				$this->session->set_userdata('peran', $peran);
-				$data['main_view'] = 'View_Home';
-				$data['title'] = 'Pustakawan';
-				$this->load->view('View_Page', $data);
-
-			} else {
-				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
-				redirect('Welcome/View_Login');
-			}
+		} else {
+			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
+			redirect('Welcome/View_Login');
 		}
 	}
 }

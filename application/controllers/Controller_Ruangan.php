@@ -17,4 +17,10 @@ class Controller_Ruangan extends CI_Controller {
 		$this->load->view('View_Page', $content);
 	}
 
+	public function DetailRuangan()
+	{
+		$this->load->view('View_InputPinjamRuang');
+
+	}
+
 }
