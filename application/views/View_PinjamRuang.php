@@ -32,7 +32,7 @@
           <div class="container">
             <div class="row">
               <div class="col-4 mb-5">
-                <a href=" ">
+                <a href="<?= site_url("/Controller_Ruangan/DetailRuangan")?> ">
                   <div class="card" style="width: 18rem; ">
                     <img class="card-img-top" src="../asset/ruangan1.jpg" alt="Card image cap" width="400" height="200">
                     <div class="card-body">

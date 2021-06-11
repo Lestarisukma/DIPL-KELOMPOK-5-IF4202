@@ -16,7 +16,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <?php if($this->session->userdata('peran') == 'mahasiswa'){?>
                     <a class="dropdown-item" href="<?= site_url('Controller_Buku/Peminjaman')?>">Peminjaman</a>
-                    <a class="dropdown-item" href="<?= site_url('Controller_Buku/Pengembalian')?>">Pengembalian</a>
+                    <!-- <a class="dropdown-item" href="<?= site_url('Controller_Buku/Pengembalian')?>">Pengembalian</a> -->
                     <a class="dropdown-item" href="<?= site_url('Controller_Buku/Denda')?>">Denda</a>
                     <?php } else{?>
                     <a class="dropdown-item" href="<?= site_url('Controller_Laporan/PengembalianBuku')?>">Buku</a>
