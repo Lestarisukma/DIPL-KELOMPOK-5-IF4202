@@ -6,7 +6,8 @@ class Controller_Ruangan extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		// $this->load->model('Model_Mahasiswa');
+		$this->load->model('Model_Ruangan');
+		
 	}
 
 	public function index()
@@ -21,6 +22,18 @@ class Controller_Ruangan extends CI_Controller {
 	{
 		$this->load->view('View_InputPinjamRuang');
 
+	}
+
+	public function pinjamRuang()
+	{
+		$data = [
+			'KodeRuangan' => $this->input->post('KodeRuangan'),
+			'Tanggal' => date('Y-m-d',strtotime($this->input->post('Tanggal'))),
+			'NIM' => $this -> session -> userdata('NIM')
+
+		];
+		$this->Model_Ruangan->tambahDataRuangan($data);
+		redirect('Controller_Ruangan/DetailRuangan');
 	}
 
 }

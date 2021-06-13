@@ -33,6 +33,17 @@ class Model_Buku extends CI_Model {
 		$this->db->where('KodeBuku', $KodeBuku);
 		return $this->db->delete('buku');
 	}
+
+	public function getPeminjamanByID($idPeminjaman){
+		$this->db->select('idPeminjaman, NIM');
+		$this->db->where('idPeminjaman', $idPeminjaman);
+		return $this->db->get('peminjaman')->row();
+
+	}
+
+	public function insertPengembalian($data){
+		$this->db->insert('pengembalian',$data);
+	}
 	
 }
 ?>

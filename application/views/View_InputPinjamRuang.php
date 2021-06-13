@@ -6,17 +6,15 @@
     <body>
      
         <div class="div-img">
-            <form style="float:right;">
+            <form style="float:right;" method="POST" action="<?=site_url('Controller_Ruangan/pinjamRuang')?>">
                 <h2 style="padding-bottom: 20px;">Input Peminjaman Ruangan</h2>
                 <p>
-                    <input type="text"class="id" placeholder="Masukkan Kode Ruangan"/>
+                    <input type="text"class="id" name="KodeRuangan" placeholder="Masukkan Kode Ruangan"/>
                 </p>
                 <p>
-                    <input type="date" class="tanggal"/>
+                    <input type="date" name="Tanggal" class="tanggal"/>
                 </p>
-                <p>
-                    <input type="time" class="time"/>
-                </p>
+                
                 <button>OK</button>
             </form>
             <h1>R01</h1>

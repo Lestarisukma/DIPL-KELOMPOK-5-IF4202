@@ -33,7 +33,7 @@ class Model_Mahasiswa extends CI_Model {
 	}
 
 	public function getDenda($NIM){
-        $this->db->select('mahasiswa.NIM, pengembalian.idPeminjaman, pengembalian.Judul, pengembalian.Tanggal, denda.TotalDenda, denda.idDenda');
+        $this->db->select('mahasiswa.NIM, pengembalian.idPeminjaman, pengembalian.Tanggal, denda.TotalDenda, denda.idDenda');
         $this->db->from('mahasiswa');
         $this->db->join('pengembalian', 'pengembalian.NIM = mahasiswa.NIM', 'inner');
         $this->db->join('denda', 'denda.idDenda = pengembalian.idDenda', 'inner');
