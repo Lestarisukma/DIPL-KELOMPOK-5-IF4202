@@ -18,29 +18,26 @@
             <thead>
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">Kode Peminjaman</th>
-                <th scope="col">Keterangan</th>
-                <th scope="col">Denda</th>
-                <th scope="col">Opsi</th>
+                <th scope="col">ID Peminjaman</th>
+                <th scope="col">NIM</th>
+                <th scope="col">Judul Buku</th>
+                <th scope="col">Tanggal Pengembalian</th>
+                <th scope="col">Total Denda</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>P00001</td>
-                <td>Waktu peminjaman buku telah melewati
-                    batas waktu yang telah ditentukan</td>
-                <td>Rp 10.000</td>
-                <td>
-                    <button
-                        type="button"
-                        class="btn btn-success"
-                        data-toggle="modal"
-                        data-target="">
-                        Bayar
-                    </button>
-                </td>
-              </tr>
+            <?php $no=1; foreach ($data as $d_denda ) {?>
+                <tr>
+                  <td>
+                    <?php echo $no?>
+                  </td>
+                    <td id="margin"><?php echo $d_denda['idPeminjaman']?></td>
+                    <td id="margin"><?php echo $d_denda['NIM']?></td>
+                    <td id="margin"><?php echo $d_denda['Judul'] ?></td>
+                    <td id="margin"><?php echo $d_denda['Tanggal']?></td>
+                    <td id="margin"><?php echo $d_denda['TotalDenda'] ?></td>
+                </tr>
+              <?php $no++;} ?>   
             </tbody>
           </table>
           <div style="color: red; margin-top: 250px;"><b>*Silahkan segera membayar denda!</b></div>

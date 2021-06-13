@@ -50,7 +50,7 @@ class Welcome extends CI_Controller {
 		// $data['title'] = 'Login';
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('View_Page', $data);
+			redirect('Welcome/login');
 			return;
 		} 
 		
@@ -75,6 +75,7 @@ class Welcome extends CI_Controller {
 					
 					$this->session->set_userdata('nama', $mhs->NamaMhs);
 					$this->session->set_userdata('peran', $peran);
+					$this->session->set_userdata('NIM', $mhs->NIM);
 					// $data['main_view'] = 'View_Home';
 					// $data['title'] = 'Mahasiswa';
 					// $this->load->view('View_Page', $data);
@@ -111,5 +112,10 @@ class Welcome extends CI_Controller {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
 			redirect('Welcome/View_Login');
 		}
+	}
+
+	public function Detail($KodeBuku){
+		$data = $this -> Model_Buku -> getBukuByKodeBuku($KodeBuku);
+		echo json_encode($data);
 	}
 }

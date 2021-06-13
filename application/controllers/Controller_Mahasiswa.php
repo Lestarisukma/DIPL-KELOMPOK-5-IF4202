@@ -70,4 +70,15 @@ class Controller_Mahasiswa extends CI_Controller {
 
 	}
 
+	public function peminjamanBuku()
+	{
+		$data = [
+			"NIM" => $this-> input-> post("NIM"),
+			"KodeBuku" => $this-> input-> post("KodeBuku"),
+			"Tanggal" => date("Y-m-d", strtotime($this->input->post("Tanggal")))
+		];
+		$this -> Model_Mahasiswa -> peminjamanBuku($data);
+		redirect("Controller_Buku/Peminjaman");
+	}
+
 }
