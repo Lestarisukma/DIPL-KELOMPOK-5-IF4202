@@ -30,7 +30,7 @@
                 <th scope="col">ID Peminjaman</th>
                 <th scope="col">Nama Mahasiswa</th>
                 <th scope="col">Judul Buku</th>
-                <th scope="col">Tanggal</th>
+                <th scope="col">Tanggal Pengembalian</th>
                 <th scope="col">Total Denda</th>
                 <th scope="col">Opsi</th>
               </tr>
@@ -42,7 +42,7 @@
                     <?php echo $no?>
                   </td>
                     <td id="margin"><?php echo $d_denda['idPeminjaman']?></td>
-                    <td id="margin"><?php echo $d_denda['NamaMhs']?></td>
+                    <td id="margin"><?php echo $d_denda['NIM']?></td>
                     <td id="margin"><?php echo $d_denda['Judul'] ?></td>
                     <td id="margin"><?php echo $d_denda['Tanggal']?></td>
                     <td id="margin"><?php echo $d_denda['TotalDenda'] ?></td>
@@ -58,7 +58,7 @@
                         <a
                             type="button"
                             class="btn btn-danger"
-                            href="<?php echo site_url('Controller_Laporan/hapusDenda/'); ?><?php echo $d_denda['idDenda'] ?>"
+                            href="<?php echo site_url('Controller_InputDenda/hapusDenda/'); ?><?= $d_denda['idDenda'] ?>"
                             onclick="return confirm('Apakah Anda Yakin untuk Menghapusnya?')">Delete</a>
                     </td>
                 </tr>
@@ -78,26 +78,20 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="<?= site_url("Controller_InputDenda/tambahDenda/");?>" method="POST"  enctype="multipart/form-data">
+        <?php
+          $id = 0;
+          if(count($dataDenda) > 0){
+             $id = $dataDenda[count($dataDenda)-1];
+          }
+        ?>
+        <form action="<?= site_url("Controller_InputDenda/addDenda/".$id);?>" method="POST"  enctype="multipart/form-data">
             <div class="form-group">
               <label for="idPeminjaman">ID Peminjaman</label>
-              <input type="text" class="form-control" id="JudulBuku" name="Judul">
+              <input type="text" class="form-control" id="idPeminjaman" name="idPeminjaman">
             </div>
              <div class="form-group">
-              <label for="NamaMhs">Nama Mahasiswa</label>
-              <input type="text" class="form-control" id="KodeBuku" name="KodeBuku">
-            </div>
-             <div class="form-group">
-              <label for="Judul">Judul Buku</label>
-              <input type="text" class="form-control" id="PenerbitBuku" name="Penerbit">
-            </div>
-             <div class="form-group">
-              <label for="Tanggal">Tanggal</label>
-              <input type="date" class="form-control" id="StockBuku" name="Stock">
-            </div>
-            <div class="form-group">
-              <label for="TotalDenda">Total Denda</label>
-              <input type="text" class="form-control" id="TotalDenda" name="TotalDenda">
+              <label for="NIM">NIM</label>
+              <input type="text" class="form-control" id="NIM" name="NIM">
             </div>
             <div class="text-center">
               <button type="submit" class="btn btn-primary" value="uploads">Tambah Denda</button>
@@ -105,6 +99,40 @@
             </div>
         </form>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Update Buku -->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h2 style="text-align:center;">EDIT DATA DENDA</h2>
+      </div>
+      <div class="modal-body">
+
+      <!-- isi form ini -->
+      <form action="" method="POST" id="formUpdate">
+
+        <div class="form-group">
+          <label for="JudulB">ID Peminjaman</label>
+          <input type="text" class="form-control" id="JudulBook" placeholder="Judul Buku" name="JudulB" required>
+        </div>
+        <div class="form-group">
+          <label for="PenerbitB">Penerbit</label>
+          <input type="text" class="form-control" id="PenerbitBook" placeholder="Penerbit Buku" name="PenerbitB" required>
+        </div>
+        <div class="form-group">
+          <label for="StockB">Stock</label>
+          <input type="text" class="form-control" id="StockBook" placeholder="Stock Buku" name="StockB" required>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+        <button type="submit" class="btn btn-primary" id="updateSubmit">Submit</button>
+      </div>
+    </form>
     </div>
   </div>
 </div>

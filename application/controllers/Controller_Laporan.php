@@ -6,7 +6,7 @@ class Controller_Laporan extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Model_Laporan');
+		$this->load->model('Model_InputDenda');
 		$this->load->model('Model_Buku');
 	}
 
@@ -22,7 +22,7 @@ class Controller_Laporan extends CI_Controller {
 	{
 		$content['main_view'] = 'View_LapDenda';
 		$content['title'] = 'Pustakawan | Denda Mahasiswa';
-		$content['dataDenda'] = $this->Model_Laporan->getDenda();
+		$content['dataDenda'] = $this->Model_InputDenda->getDenda();
 
 		$this->load->view('View_Page', $content);
 	}
@@ -43,12 +43,5 @@ class Controller_Laporan extends CI_Controller {
 		$this->load->view('View_Page', $content);
 	}
 
-	public function hapusDenda($idDenda) {
-
-		if(!isset($idDenda)) show_404();
-		var_dump($idDenda);
-		if($this->Model_Laporan->deleteDenda($idDenda)) {
-			redirect('/Controller_Laporan/DendaMahasiswa');
-		}
-	}
+	
 }
