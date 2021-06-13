@@ -8,7 +8,8 @@ class Model_Ruangan extends CI_Model {
 	}
 
 	public function tambahDataRuangan($data){
-		return $this->db->insert('ruangan', $data);
+		return $this->db->insert('peminjaman', $data);
+		
 	}
 
 	public function getRuanganByKodeRuangan($KodeRuangan)

@@ -43,5 +43,18 @@ class Controller_Laporan extends CI_Controller {
 		$this->load->view('View_Page', $content);
 	}
 
+	public function insertPengembalian(){
+		$idPeminjaman = $this->input->post('idPeminjaman');
+		$peminjaman = $this->Model_Buku->getPeminjamanByID($idPeminjaman);
+		$data = [
+			'idPeminjaman' => $idPeminjaman,
+			'Tanggal' => date('Y-m-d', strtotime($this->input->post('Tanggal'))),
+			'NIM' => $peminjaman->NIM
+		];
+		
+		$this->Model_Buku->insertPengembalian($data);
+		redirect('/Controller_Laporan/PengembalianBuku');
+	}
+
 	
 }

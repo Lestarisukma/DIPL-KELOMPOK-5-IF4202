@@ -97,7 +97,7 @@ class Controller_InputDenda extends CI_Controller {
 
 		if(!isset($idDenda)) show_404();
 		var_dump($idDenda);
-		if($this->Model_Laporan->deleteDenda($idDenda)) {
+		if($this->Model_InputDenda->deleteDenda($idDenda)) {
 			redirect('/Controller_Laporan/DendaMahasiswa');
 		}
 	}

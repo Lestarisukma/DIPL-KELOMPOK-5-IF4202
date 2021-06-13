@@ -20,7 +20,6 @@
                 <th scope="col">No</th>
                 <th scope="col">ID Peminjaman</th>
                 <th scope="col">NIM</th>
-                <th scope="col">Judul Buku</th>
                 <th scope="col">Tanggal Pengembalian</th>
                 <th scope="col">Total Denda</th>
               </tr>
@@ -33,7 +32,6 @@
                   </td>
                     <td id="margin"><?php echo $d_denda['idPeminjaman']?></td>
                     <td id="margin"><?php echo $d_denda['NIM']?></td>
-                    <td id="margin"><?php echo $d_denda['Judul'] ?></td>
                     <td id="margin"><?php echo $d_denda['Tanggal']?></td>
                     <td id="margin"><?php echo $d_denda['TotalDenda'] ?></td>
                 </tr>

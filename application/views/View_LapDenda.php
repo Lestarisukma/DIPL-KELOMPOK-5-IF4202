@@ -29,7 +29,6 @@
                 <th scope="col">No</th>
                 <th scope="col">ID Peminjaman</th>
                 <th scope="col">NIM</th>
-                <th scope="col">Judul Buku</th>
                 <th scope="col">Tanggal Pengembalian</th>
                 <th scope="col">Total Denda</th>
                 <th scope="col">Opsi</th>
@@ -43,18 +42,17 @@
                   </td>
                     <td id="margin"><?php echo $d_denda['idPeminjaman']?></td>
                     <td id="margin"><?php echo $d_denda['NIM']?></td>
-                    <td id="margin"><?php echo $d_denda['Judul'] ?></td>
                     <td id="margin"><?php echo $d_denda['Tanggal']?></td>
                     <td id="margin"><?php echo $d_denda['TotalDenda'] ?></td>
                     <td id="margin">
-                        <button
+                        <!-- <button
                             type="button"
                             class="btn btn-warning"
                             data-toggle="modal"
                             data-target="#updateModal"
                             data-id="<?= $d_denda['idPeminjaman']?>">
                             Edit
-                        </button>
+                        </button> -->
                         <a
                             type="button"
                             class="btn btn-danger"
@@ -81,7 +79,7 @@
         <?php
           $id = 0;
           if(count($dataDenda) > 0){
-             $id = $dataDenda[count($dataDenda)-1];
+             $id = $dataDenda[count($dataDenda)-1]['idDenda'];
           }
         ?>
         <form action="<?= site_url("Controller_InputDenda/addDenda/".$id);?>" method="POST"  enctype="multipart/form-data">

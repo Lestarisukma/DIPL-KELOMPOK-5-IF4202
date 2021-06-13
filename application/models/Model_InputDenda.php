@@ -24,7 +24,7 @@ class Model_InputDenda extends CI_Model {
 	}
 
 	public function getDenda(){
-        $this->db->select('mahasiswa.NIM, pengembalian.idPeminjaman, pengembalian.Judul, pengembalian.Tanggal, denda.TotalDenda, denda.idDenda');
+        $this->db->select('mahasiswa.NIM, pengembalian.idPeminjaman, pengembalian.Tanggal, denda.TotalDenda, denda.idDenda');
         $this->db->from('mahasiswa');
         $this->db->join('pengembalian', 'pengembalian.NIM = mahasiswa.NIM', 'inner');
         $this->db->join('denda', 'denda.idDenda = pengembalian.idDenda', 'inner');
@@ -55,7 +55,8 @@ class Model_InputDenda extends CI_Model {
 		$this->db->where('idPeminjaman',$idPeminjaman);
 		$this->db->update('pengembalian', ['idDenda'=>$idDenda]);
 	}
-
+    
+	
 	
 	
 }
