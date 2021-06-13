@@ -19,7 +19,7 @@
                 </p>
                 <button>OK</button>
             </form>
-            <h1>Ruangan 01</h1>
+            <h1>R01</h1>
             <img class="card-img-top" src="../../asset/ruangan1.jpg" alt="Card image cap" width="650" height="358" style="border-radius: 5px;">
         </div>
     </body>

@@ -80,7 +80,7 @@
           
         ?>
           <div class="col-2">
-              <div class="card-pop" >
+              <div class="card-pop buku" data-kode="<?=$b['KodeBuku']?>" >
                 <img src="<?=base_url('asset/'.$b['Gambar'])?>" width="210" height="210" class="card-img-top" alt="..." >
               </div>
           </div>
@@ -89,6 +89,7 @@
     </div>  
 </div>
 
+<!-- CARD BAWAH -->
 <div class="container-fluid">
     <div class="row">
       <div class="col-7 mt-sm-5 mb-4">
@@ -105,7 +106,7 @@
           
         ?>
           <div class="col-2">
-              <div class="card-pop" >
+              <div class="card-pop buku" data-kode="<?=$b['KodeBuku']?>" >
                 <img src="<?=base_url('asset/'.$b['Gambar'])?>" width="210" height="210" class="card-img-top" alt="...">
               </div>
           </div>
@@ -116,7 +117,7 @@
 </div> 
 
 <!--Modal Detail Buku-->
-<div class="modal" tabindex="-1" role="dialog">
+<div class="modal" tabindex="-1" role="dialog" id="modal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -126,10 +127,24 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-6">
+                <img width="210" height="300"/>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li class="KodeBuku">
+                  </li>
+                  <li class="Penerbit">
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Pinjam Sekarang</button>
+        <button type="button" class="btn btn-primary" onclick="document.location.href='<?= site_url('Controller_Buku/Peminjaman')?>'">Pinjam Sekarang</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
       </div>
     </div>
@@ -137,9 +152,28 @@
 </div>
  
 
-<!--       
-</body>
-  <script type="text/javascript" src="../../javascript/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../../javascript/jquery-2.2.3.min.js"></script>
-<script></script>
-</html> -->
+<script type="text/javascript">
+  $(document).ready(function () {
+
+      $('.buku').click(function () {
+          const kode = $(this).data("kode")
+          $("#modal").modal("show", kode)
+        });
+        
+        $('#modal').on("shown.bs.modal", function(kode) {
+          const modal = $(this)
+        $.ajax({
+              url: `<?php echo site_url("Welcome/Detail/");?>${kode.relatedTarget}`,
+              type: "GET",
+              async: true,
+              dataType: "JSON",
+              success: function (data) {
+                modal.find('.modal-title').html(data.Judul); 
+                modal.find('.KodeBuku').html("Kode Buku : " + data.KodeBuku);
+                modal.find('.Penerbit').html("Penerbit : " + data.Penerbit);
+                modal.find('img').attr("src", `<?= base_url("asset/")?>${data.Gambar}`);
+              }
+          });
+      });
+  });
+</script>

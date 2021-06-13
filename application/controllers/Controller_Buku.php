@@ -7,6 +7,7 @@ class Controller_Buku extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Model_Buku');
+		$this->load->model('Model_Mahasiswa');
 	}
 
 	public function Peminjaman()
@@ -29,7 +30,7 @@ class Controller_Buku extends CI_Controller {
 	{
 		$content['main_view'] = 'View_PemberitahuanDenda';
 		$content['title'] = 'Mahasiswa | Denda';
-
+		$content['data'] = $this->Model_Mahasiswa->getDenda($this->session->userdata("NIM"));
 		$this->load->view('View_Page', $content);
 	}
 

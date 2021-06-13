@@ -45,16 +45,18 @@
 </head>
 <body>
     <div>
-        <h1 style="margin-left: 500px; margin-top: 50px;">Input Peminjaman Buku</h1>
-        <div class="kerangka">
-            <a>KODE BUKU</a><br>
-            <input type="text" class="textarea"/><br>
-            <a>JUDUL BUKU</a><br>
-            <input type="text" class="textarea"/><br>
-            <a>TANGGAL PENGAMBILAN</a><br>
-            <input type="date" class="textarea"/><br>
-            <button>OK</button>
-        </div>
+        <form method="post" action="<?= site_url("Controller_Mahasiswa/peminjamanBuku")?>">
+            <h1 style="margin-left: 500px; margin-top: 50px;">Input Peminjaman Buku</h1>
+            <div class="kerangka">
+                <a>NIM</a><br>
+                <input type="text" class="textarea" name="NIM"/><br>
+                <a>KODE BUKU</a><br>
+                <input type="text" class="textarea" name="KodeBuku"/><br>
+                <a>TANGGAL PENGAMBILAN</a><br>
+                <input type="date" class="textarea" name="Tanggal"/><br>
+                <button>OK</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2021 at 08:18 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Generation Time: Jun 13, 2021 at 04:27 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,7 +40,8 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`KodeBuku`, `Judul`, `Penerbit`, `Stock`, `Gambar`) VALUES
-(1, 'haloo', 'rahma', 1, 'A_Chic_Logo_Design_for_The_School_of_Styling_-_Saffron_Avenue1.jpg');
+(1, 'haloo', 'rahma', 1, 'A_Chic_Logo_Design_for_The_School_of_Styling_-_Saffron_Avenue1.jpg'),
+(1235, 'Geez & Ann', 'Tsana', 7, 'geezann.jpg');
 
 -- --------------------------------------------------------
 
@@ -59,7 +60,7 @@ CREATE TABLE `denda` (
 --
 
 INSERT INTO `denda` (`idDenda`, `Hari`, `TotalDenda`) VALUES
-(2, 2, 2000);
+(1, 2, 2000);
 
 -- --------------------------------------------------------
 
@@ -99,7 +100,22 @@ CREATE TABLE `peminjaman` (
 --
 
 INSERT INTO `peminjaman` (`idPeminjaman`, `Tanggal`, `KodeBuku`, `KodeRuangan`, `NIM`) VALUES
-(3, '2021-06-03', 1, NULL, 1301184345);
+(3, '2021-06-01', 1, NULL, 1301184345),
+(4, '2021-06-09', 1235, NULL, 1301184345),
+(9, '2021-06-13', 1235, NULL, 1301184345),
+(10, '2021-06-30', 1235, NULL, 1301184345);
+
+--
+-- Triggers `peminjaman`
+--
+DELIMITER $$
+CREATE TRIGGER `kurangin_stock` AFTER INSERT ON `peminjaman` FOR EACH ROW UPDATE buku SET stock=stock-1 WHERE KodeBuku=new.KodeBuku
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `menambah_stock` BEFORE DELETE ON `peminjaman` FOR EACH ROW UPDATE buku SET stock=stock+1 WHERE KodeBuku=old.KodeBuku
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -122,19 +138,11 @@ CREATE TABLE `pencarian` (
 
 CREATE TABLE `pengembalian` (
   `idPengembalian` int(10) NOT NULL,
-  `Judul` varchar(30) NOT NULL,
   `Tanggal` date NOT NULL,
   `idPeminjaman` int(10) NOT NULL,
   `NIM` int(15) NOT NULL,
   `idDenda` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pengembalian`
---
-
-INSERT INTO `pengembalian` (`idPengembalian`, `Judul`, `Tanggal`, `idPeminjaman`, `NIM`, `idDenda`) VALUES
-(1, 'haloo', '2021-06-03', 3, 1301184345, 2);
 
 -- --------------------------------------------------------
 
@@ -268,7 +276,7 @@ ALTER TABLE `ruangan`
 -- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `KodeBuku` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1235;
+  MODIFY `KodeBuku` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1236;
 
 --
 -- AUTO_INCREMENT for table `denda`
@@ -286,7 +294,7 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `idPeminjaman` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idPeminjaman` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `pencarian`
@@ -350,7 +358,7 @@ ALTER TABLE `pencarian`
 ALTER TABLE `pengembalian`
   ADD CONSTRAINT `pengembalian_ibfk_1` FOREIGN KEY (`idPeminjaman`) REFERENCES `peminjaman` (`idPeminjaman`),
   ADD CONSTRAINT `pengembalian_ibfk_2` FOREIGN KEY (`NIM`) REFERENCES `mahasiswa` (`NIM`),
-  ADD CONSTRAINT `pengembalian_ibfk_3` FOREIGN KEY (`idDenda`) REFERENCES `denda` (`idDenda`);
+  ADD CONSTRAINT `pengembalian_ibfk_3` FOREIGN KEY (`idDenda`) REFERENCES `denda` (`idDenda`) ON DELETE SET NULL;
 
 --
 -- Constraints for table `pustakawan`

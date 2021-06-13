@@ -28,4 +28,17 @@ class Model_Mahasiswa extends CI_Model {
 		return $this->db->delete('mahasiswa');
 	}
 	
+	public function peminjamanBuku($data){
+		return $this->db->insert('peminjaman', $data);
+	}
+
+	public function getDenda($NIM){
+        $this->db->select('mahasiswa.NIM, pengembalian.idPeminjaman, pengembalian.Judul, pengembalian.Tanggal, denda.TotalDenda, denda.idDenda');
+        $this->db->from('mahasiswa');
+        $this->db->join('pengembalian', 'pengembalian.NIM = mahasiswa.NIM', 'inner');
+        $this->db->join('denda', 'denda.idDenda = pengembalian.idDenda', 'inner');
+        $this->db->where('pengembalian.idDenda is NOT NULL', NULL, FALSE);
+		$this->db->where('mahasiswa.NIM', $NIM);
+        return $this->db->get()->result_array();
+	}
 }
