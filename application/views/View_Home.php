@@ -74,12 +74,20 @@
       </div> -->
       <div class="container">
         <div class="row">
+        <?php
+          foreach($data as $b){
+
+          
+        ?>
           <div class="col-2">
               <div class="card-pop" >
-                <img src="../../asset/nanti_kita_cerita_tentang_hari_ini_kredit_thumb.jpg" width="210" height="210" class="card-img-top" alt="..." title="Japanese">
+                <img src="<?=base_url('asset/'.$b['Gambar'])?>" width="210" height="210" class="card-img-top" alt="..." title="Japanese">
               </div>
           </div>
-          <div class="col-2">
+          <?php }
+          ?>
+          
+          <!--<div class="col-2">
               <div class="card-pop">
                 <img src="../../asset/sebuah.png" class="card-img-top" alt="..." width="210" height="210" title="Japanese">
               </div>
@@ -103,7 +111,7 @@
             <div class="card-pop">
               <img src="../../asset/the_things.jpg" class="card-img-top " alt="..." width="210" height="210" title="Japanese">
             </div>
-        </div>
+        </div> -->
     </div>  
 </div>
 
@@ -117,35 +125,18 @@
       </div> -->
       <div class="container">
         <div class="row">
+        <?php
+          foreach($data as $b){
+
+          
+        ?>
           <div class="col-2">
-              <div class="card-pop" href=" " >
-                <img src="../../asset/nanti_kita_cerita_tentang_hari_ini_kredit_thumb.jpg" width="210" height="210" class="card-img-top" alt="..." title="Japanese">
+              <div class="card-pop" >
+                <img src="<?=base_url('asset/'.$b['Gambar'])?>" width="210" height="210" class="card-img-top" alt="..." title="Japanese">
               </div>
           </div>
-          <div class="col-2">
-              <div class="card-pop">
-                <img src="../../asset/sebuah.png" class="card-img-top" alt="..." width="210" height="210" title="Japanese">
-              </div>
-          </div>
-          <div class="col-2">
-              <div class="card-pop">
-                <img src="../../asset/konspirasi.jpg" class="card-img-top" alt="..." width="210" height="210" title="Japanese">
-              </div>
-          </div>
-          <div class="col-2">
-              <div class="card-pop">
-                <img src="../../asset/geez&ann.jpg" class="card-img-top" alt="..." width="210" height="210">
-              </div>
-          </div>
-          <div class="col-2">
-              <div class="card-pop">
-                <img src="../../asset/the_things.jpg" class="card-img-top " alt="..." width="210" height="210" title="Japanese">
-              </div>
-          </div>
-          <div class="col-2">
-            <div class="card-pop">
-              <img src="../../asset/the_things.jpg" class="card-img-top " alt="..." width="210" height="210" title="Japanese">
-            </div>
+          <?php }
+          ?>
         </div>
     </div>  
 </div> 

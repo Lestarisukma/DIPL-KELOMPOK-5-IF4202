@@ -11,8 +11,8 @@ class Controller_InputDenda extends CI_Controller {
 
 	public function index()
 	{
-		$content['main_view'] => 'View_InputDenda';
-		$content['title'] => 'Pustakawan | Input Denda';
+		$content['main_view'] = 'View_InputDenda';
+		$content['title'] = 'Pustakawan | Input Denda';
 
 		$this->load->view('View_Home', $content);
 	}
@@ -37,9 +37,7 @@ class Controller_InputDenda extends CI_Controller {
 		redirect('Welcome/login','refresh');
 	}
 
-	public function deleteDenda($idDenda){
-		$this->Model_InputDenda->deleteDataDenda($idDenda);
-	}
+	
 
 	public function getMahasiswaByidPeminjaman($idPeminjaman)
 	{

@@ -23,13 +23,8 @@ class Model_InputDenda extends CI_Model {
 		return $this->db->update('denda', $data);
 	}
 
-	public function deleteDataDenda($idDenda){
-		$this->db->where('idDenda', $idDenda);
-		return $this->db->delete('denda');
-	}
+	
 
-	public function dbDenda($idPeminjaman, ){
-
-	}
+	
 	
 }

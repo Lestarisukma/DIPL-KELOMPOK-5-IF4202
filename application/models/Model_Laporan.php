@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Model_Denda extends CI_Model {
+class Model_Laporan extends CI_Model {
     
     public function getDenda(){
         $this->db->select('mahasiswa.NamaMhs, pengembalian.idPeminjaman, pengembalian.Judul, pengembalian.Tanggal, denda.TotalDenda, denda.idDenda');
@@ -12,4 +12,8 @@ class Model_Denda extends CI_Model {
         return $this->db->get()->result_array();
 	}
 
+    public function deleteDenda($idDenda){
+		$this->db->where('idDenda', $idDenda);
+		return $this->db->delete('denda');
+	}
 }
