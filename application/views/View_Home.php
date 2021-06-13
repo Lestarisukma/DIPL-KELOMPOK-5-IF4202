@@ -81,37 +81,11 @@
         ?>
           <div class="col-2">
               <div class="card-pop" >
-                <img src="<?=base_url('asset/'.$b['Gambar'])?>" width="210" height="210" class="card-img-top" alt="..." title="Japanese">
+                <img src="<?=base_url('asset/'.$b['Gambar'])?>" width="210" height="210" class="card-img-top" alt="..." >
               </div>
           </div>
           <?php }
           ?>
-          
-          <!--<div class="col-2">
-              <div class="card-pop">
-                <img src="../../asset/sebuah.png" class="card-img-top" alt="..." width="210" height="210" title="Japanese">
-              </div>
-          </div>
-          <div class="col-2">
-              <div class="card-pop">
-                <img src="../../asset/konspirasi.jpg" class="card-img-top" alt="..." width="210" height="210" title="Japanese">
-              </div>
-          </div>
-          <div class="col-2">
-              <div class="card-pop">
-                <img src="../../asset/geez&ann.jpg" class="card-img-top" alt="..." width="210" height="210">
-              </div>
-          </div>
-          <div class="col-2">
-              <div class="card-pop">
-                <img src="../../asset/the_things.jpg" class="card-img-top " alt="..." width="210" height="210" title="Japanese">
-              </div>
-          </div>
-          <div class="col-2">
-            <div class="card-pop">
-              <img src="../../asset/the_things.jpg" class="card-img-top " alt="..." width="210" height="210" title="Japanese">
-            </div>
-        </div> -->
     </div>  
 </div>
 
@@ -132,7 +106,7 @@
         ?>
           <div class="col-2">
               <div class="card-pop" >
-                <img src="<?=base_url('asset/'.$b['Gambar'])?>" width="210" height="210" class="card-img-top" alt="..." title="Japanese">
+                <img src="<?=base_url('asset/'.$b['Gambar'])?>" width="210" height="210" class="card-img-top" alt="...">
               </div>
           </div>
           <?php }
@@ -140,6 +114,27 @@
         </div>
     </div>  
 </div> 
+
+<!--Modal Detail Buku-->
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Detail</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Pinjam Sekarang</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
  
 
 <!--       

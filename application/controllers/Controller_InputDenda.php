@@ -6,7 +6,7 @@ class Controller_InputDenda extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->model('Model_InputDenda');
+		$this->load->model('Model_InputDenda');
 	}
 
 	public function index()
@@ -79,30 +79,27 @@ class Controller_InputDenda extends CI_Controller {
         }
     }
 
-	public function InsetDenda() {
-		
-		$cekkode = $this->Model_Denda->getBukuByKodeBuku($this->input->post('KodeBuku'));
-		if (count($cekkode) <= 0){
-			$data = [
-				'idPeminjaman' => $this->input->post('idPeminjaman'),
-				'NamaMhs' => $this->input->post('NamaMhs'),
-				'Judul' => $this->input->post('Judul'),
-				'Tanggal' => $this->input->post('Tanggal'),
-				'TotalDenda' => $this->input->post('TotalDenda')
-			];
+	public function addDenda($idDenda){
+		$hari = $this->Model_InputDenda->getTotalHari();
+		$total = $this->hitungDenda(1000, $hari);
+		$idDenda = $idDenda+1;
+		$data = [
+			'idDenda' => $idDenda,
+			'Hari' => $hari,
+			'TotalDenda' => $total
+		];
+		$this->Model_InputDenda->tambahDenda($data);
+		$this->Model_InputDenda->updateKembaliIdDenda($this->input->post('idPeminjaman'), $this->input->post('NIM'), $idDenda);
+		redirect('Controller_Laporan/DendaMahasiswa');
+	}
 
-			$insert = $this->Model_InputDenda->tambahDataDenda($data);
-			if(!$insert) {
-				$error = array('error' => $this->upload->display_errors());
-				redirect('/Controller_InputDenda');
-			}
+	public function hapusDenda($idDenda) {
 
-			else {
-				redirect('/Controller_InputDenda');
-			}
+		if(!isset($idDenda)) show_404();
+		var_dump($idDenda);
+		if($this->Model_Laporan->deleteDenda($idDenda)) {
+			redirect('/Controller_Laporan/DendaMahasiswa');
 		}
-		else {
-			redirect('/Controller_InutDenda');
-		}
-	}		
+	}
+	
 }
