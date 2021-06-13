@@ -58,7 +58,7 @@
                         <a
                             type="button"
                             class="btn btn-danger"
-                            href="<?php echo site_url('Controller_Kelola/hapusBuku/'); ?><?php echo $d_denda['idDenda'] ?>"
+                            href="<?php echo site_url('Controller_Laporan/hapusDenda/'); ?><?php echo $d_denda['idDenda'] ?>"
                             onclick="return confirm('Apakah Anda Yakin untuk Menghapusnya?')">Delete</a>
                     </td>
                 </tr>
@@ -109,4 +109,4 @@
   </div>
 </div>
 <!-- </body>
-</html> -->id
+</html> -->

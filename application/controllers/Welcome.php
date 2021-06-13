@@ -18,16 +18,24 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Model_Buku');
+	}
+
 	public function index()
 	{
 		session_destroy();
 		$data['main_view'] = 'View_Login';
 		$data['title'] = 'Login';
 		$this->load->view('View_Page', $data);
+		
 	}
 
 	public function vmahasiswa()
 	{
+		$data['data'] = $this->Model_Buku->getBuku();
 		$data['main_view'] = 'View_Home';
 		$data['title'] = 'Home';
 		$this->load->view('View_Page', $data);
@@ -38,8 +46,8 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('Email', 'email', 'required');
 		$this->form_validation->set_rules('Password', 'password', 'required');
 
-		$data['main_view'] = 'View_Login';
-		$data['title'] = 'Login';
+		// $data['main_view'] = 'View_Login';
+		// $data['title'] = 'Login';
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('View_Page', $data);
@@ -67,9 +75,10 @@ class Welcome extends CI_Controller {
 					
 					$this->session->set_userdata('nama', $mhs->NamaMhs);
 					$this->session->set_userdata('peran', $peran);
-					$data['main_view'] = 'View_Home';
-					$data['title'] = 'Mahasiswa';
-					$this->load->view('View_Page', $data);
+					// $data['main_view'] = 'View_Home';
+					// $data['title'] = 'Mahasiswa';
+					// $this->load->view('View_Page', $data);
+					redirect('Welcome/vmahasiswa');
 	
 				} else {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
@@ -88,9 +97,10 @@ class Welcome extends CI_Controller {
 					
 					$this->session->set_userdata('nama',$pstkwn->Nama);
 					$this->session->set_userdata('peran', $peran);
-					$data['main_view'] = 'View_Home';
-					$data['title'] = 'Pustakawan';
-					$this->load->view('View_Page', $data);
+					// $data['main_view'] = 'View_Home';
+					// $data['title'] = 'Pustakawan';
+					// $this->load->view('View_Page', $data);
+					redirect('Welcome/vmahasiswa');
 	
 				} else {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Password Invalid</div>');
