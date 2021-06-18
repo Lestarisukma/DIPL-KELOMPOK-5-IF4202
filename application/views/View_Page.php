@@ -17,6 +17,9 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
     <!-- <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.js"></script> -->
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"> </script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="<?= base_url(); ?>javascript/sweetalert2.all.min.js"></script>
+    <script src="<?= base_url();?> javascript/"></script>
     <link href="<?= base_url('css/login.css')?>" rel="stylesheet">
 </head>
 <body>
