@@ -33,9 +33,7 @@
                 <?php } ?>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        </form>
+        <i class="fas fa-user-circle fa-600x"></i>
         <div class="dropdown nav-item">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <?= $this->session->userdata('nama');?>
