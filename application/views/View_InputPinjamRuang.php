@@ -5,8 +5,6 @@
     </head>
     <body>
         <div class="div-img">
-            <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>">
-            <?php if($this->session->flashdata('flash')) : ?>
             <form style="float:right;" method="POST" action="<?=site_url('Controller_Ruangan/pinjamRuang')?>">
                 <h2 style="padding-bottom: 20px;">Input Peminjaman Ruangan</h2>
                 <p>
@@ -21,8 +19,7 @@
             <h1>Ruangan 01</h1>
             <p style="color: grey; margin-top:2px;">Kode Ruangan : 1</p>
             <img class="card-img-top" src="../../asset/ruangan1.jpg" alt="Card image cap" width="650" height="358" style="border-radius: 5px;">
-            </div>
-            <?php endif; ?>            
+            </div>         
         </div>
     </body>
 </html>

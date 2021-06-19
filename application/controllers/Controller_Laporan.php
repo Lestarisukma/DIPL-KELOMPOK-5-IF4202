@@ -23,7 +23,7 @@ class Controller_Laporan extends CI_Controller {
 		$content['main_view'] = 'View_LapDenda';
 		$content['title'] = 'Pustakawan | Denda Mahasiswa';
 		$content['dataDenda'] = $this->Model_InputDenda->getDenda();
-
+		$content['denda'] = $this->Model_InputDenda->getTabelDenda() ;
 		$this->load->view('View_Page', $content);
 	}
 

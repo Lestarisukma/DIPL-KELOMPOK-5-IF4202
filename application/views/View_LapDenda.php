@@ -78,8 +78,8 @@
       <div class="modal-body">
         <?php
           $id = 0;
-          if(count($dataDenda) > 0){
-             $id = $dataDenda[count($dataDenda)-1]['idDenda'];
+          if(count($denda) > 0){
+             $id = $denda[0]['idDenda'];
           }
         ?>
         <form action="<?= site_url("Controller_InputDenda/addDenda/".$id);?>" method="POST"  enctype="multipart/form-data">

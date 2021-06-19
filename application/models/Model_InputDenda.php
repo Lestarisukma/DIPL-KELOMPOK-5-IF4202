@@ -56,7 +56,10 @@ class Model_InputDenda extends CI_Model {
 		$this->db->update('pengembalian', ['idDenda'=>$idDenda]);
 	}
     
-	
+	public function getTabelDenda(){
+		$this->db->order_by('idDenda', 'DESC');
+		return $this->db->get('denda')->result_array();
+	}
 	
 	
 }
