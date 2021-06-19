@@ -1,4 +1,4 @@
-
+<?=$this->session->flashdata('message')?>
 <div class="mt-lg-5  mb-5"
 style="background-color: #CBE3FF; width: 100%; text-align: center; padding-top: 10px; padding-bottom: 10px;">
     <h1>DATA BUKU</h1>
@@ -192,7 +192,7 @@ $(document).ready(function() {
       success: function(data) {
         console.log(data)
         if (data) {
-          $('#formUpdate').attr("action",`<?= site_url("Controller_Buku/updateBuku/")?>${data.KodeBuku}`);
+          $('#formUpdate').attr("action",`<?= site_url("Controller_Kelola/editBuku/")?>${data.KodeBuku}`);
           $('#JudulBook').val(data.Judul);
           $('#PenerbitBook').val(data.Penerbit);
           $('#StockBook').val(data.Stock);

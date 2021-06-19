@@ -33,6 +33,11 @@ class Controller_Ruangan extends CI_Controller {
 
 		];
 		$this->Model_Ruangan->tambahDataRuangan($data);
+		$this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" role="alert">Ruangan berhasil diupdate
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+	  		</button>
+	</div>');
 		redirect('Controller_Ruangan/DetailRuangan');
 	}
 

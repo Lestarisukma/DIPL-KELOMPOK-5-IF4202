@@ -53,6 +53,11 @@ class Controller_Laporan extends CI_Controller {
 		];
 		
 		$this->Model_Buku->insertPengembalian($data);
+		$this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" role="alert">Pengembalian buku berhasil 
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+	  		</button>
+	</div>');
 		redirect('/Controller_Laporan/PengembalianBuku');
 	}
 
