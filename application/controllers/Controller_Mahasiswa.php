@@ -78,6 +78,11 @@ class Controller_Mahasiswa extends CI_Controller {
 			"Tanggal" => date("Y-m-d", strtotime($this->input->post("Tanggal")))
 		];
 		$this -> Model_Mahasiswa -> peminjamanBuku($data);
+		$this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" role="alert">Buku berhasil dipinjam
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+	  		</button>
+	</div>');
 		redirect("Controller_Buku/Peminjaman");
 	}
 

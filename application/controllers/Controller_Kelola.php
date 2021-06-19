@@ -77,4 +77,20 @@ class Controller_Kelola extends CI_Controller {
 		}
 	}
 
+	public function editBuku($Kodebuku){
+		$data = [
+            "Judul" => $this->input->post('JudulB'),
+            "Penerbit" => $this->input->post('PenerbitB'),
+            "Stock" => $this->input->post('StockB')
+        ];
+		$this->Model_Buku->updateBuku($Kodebuku, $data);
+		$this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible" role="alert">Update berhasil 
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+	  		</button>
+	</div>');
+
+		redirect('/Controller_Kelola', 'refresh');
+	}
+
 }
